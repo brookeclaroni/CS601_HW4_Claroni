@@ -6,10 +6,29 @@
     <title>
         Brooke Claroni HW 4
     </title>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    Hello world
+    <form name="myFirstForm" action="http://bucs601.com/submit.php" method = "post" novalidate onsubmit="return validateForm();">
+        <p>Enter your first name: <input type="text" name="firstName"></p>
+        <p>Enter your last name: <input type="text" name="lastName"></p>
+        <p>Enter your facilitator's first name: <input type="text" name="facilitator"></p>
+        <p>Select your degree program:
+            <input type="radio" name="program" value="MSSD" checked>MSSD
+            <input type="radio" name="program" value="MSCS">MSCS
+            <input type="radio" name="program" value="MSCIS">MSCIS
+            <input type="radio" name="program" value="Other">Other
+        </p>
+        <p>Check off any of the following courses if you have enrolled in them:
+            <input type="checkbox" name="course1" value="CS634">CS634
+            <input type="checkbox" name="course2" value="CS669">CS669
+            <input type="checkbox" name="course3" value="CS677">CS677
+            <input type="checkbox" name="course4" value="CS683">CS683
+        </p>
+        <input type="submit" names="submitButton" value="Submit">
+    </form>
 </body>
 
 </html>
