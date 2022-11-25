@@ -8,20 +8,18 @@ function validateForm() {
 
     // validate firstName and lastName only contain alpha characters
     var alpha = /^[A-Za-z]+$/;
-    if(!firstName.match(alpha))
-    {
+    if (!firstName.match(alpha)) {
         errors += "<li>Non-alphabetic letters were used in first name.</li>";
         validated = false;
     }
-    if(!lastName.match(alpha))
-    {
+    if (!lastName.match(alpha)) {
         errors += "<li>Non-alphabetic letters were used in last name.</li>";
         validated = false;
     }
 
     // validate firstName and lastName contain more than two characters
     if (firstName.length <= 2) {
-        errors +=  "<li>First name has too few characters.</li>";
+        errors += "<li>First name has too few characters.</li>";
         validated = false;
     }
     if (lastName.length <= 2) {
@@ -35,8 +33,9 @@ function validateForm() {
         validated = false;
     }
 
+    // if there are errors, print them on the dom styled
     if (validated == false) {
-        document.getElementById("errorMessage").innerHTML = "Your submission failed due to the following: <ul>" + errors +"</ul>";
+        document.getElementById("errorMessage").innerHTML = "Your submission failed due to the following: <ul>" + errors + "</ul>";
         return false;
     }
 
