@@ -3,28 +3,40 @@ function validateForm() {
     var firstName = document.getElementsByName("firstName")[0].value;
     var lastName = document.getElementsByName("lastName")[0].value;
     var facilitator = document.getElementsByName("facilitator")[0].value;
+    var errors = "";
+    var validated = true;
 
     // validate firstName and lastName only contain alpha characters
     var alpha = /^[A-Za-z]+$/;
-    if(!(firstName.match(alpha) && lastName.match(alpha)))
+    if(!firstName.match(alpha))
     {
-        alert('Please only use alphabetic letters in first and last name');
-        return false;
+        errors += "Non-alphabetic letters were used in first name. ";
+        validated = false;
+    }
+    if(!lastName.match(alpha))
+    {
+        errors += "Non-alphabetic letters were used in last name. ";
+        validated = false;
     }
 
     // validate firstName and lastName contain more than two characters
     if (firstName.length <= 2) {
-        alert("First name has too few characters");
-        return false;
+        errors +=  "First name has too few characters. ";
+        validated = false;
     }
     if (lastName.length <= 2) {
-        alert("Last name has too few characters");
-        return false;
+        errors += "Last name has too few characters. ";
+        validated = false;
     }
 
     // validate facilitator name is on list
     if (!(facilitator == "Christian" || facilitator == "Fazil" || facilitator == "Josh" || facilitator == "Chris" || facilitator == "Behdad")) {
-        alert("Please provide a valid facilitator name: Christian, Fazil, Josh, Chris, or Behdad");
+        errors += "Facilitator name not recognized as Christian, Fazil, Josh, Chris, or Behdad. ";
+        validated = false;
+    }
+
+    if (validated == false) {
+        document.getElementById("errorMessage").innerHTML = "Your submission failed due to the following: " + errors;
         return false;
     }
 
