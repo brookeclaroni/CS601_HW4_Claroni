@@ -1,3 +1,25 @@
+body {
+    background-color: #232329;
+    color: white;
+    font-family:Verdana;
+}
+
+h1 {
+    color:lightpink;
+}
+
+input[type=submit] {
+    background-color:lightpink;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: medium;
+    
+}
+
+input[type=submit]:hover {
+    background-color:hotpink;
+}
+
 #errorMessage {
-    color: red;
+    color: rgb(255, 99, 99);
 }
